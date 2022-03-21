@@ -1,0 +1,17 @@
+/* styles for all screens*/
+
+/* styles for screeen between 375-424 px*/
+@media screen and (min-width: 375px) and (max-width: 424px) {
+}
+/* styles for screeen between 425-767 px*/
+@media screen and (min-width: 425px) and (max-width: 767px) {
+}
+/* styles for screeen between 768-1023 px*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+}
+/* styles for screeen between 1024-1439 px*/
+@media screen and (min-width: 1024px) and (max-width: 1439px) {
+}
+/* styles for screeen more than 1440 px */
+@media screen and (min-width: 1440px) {
+}
