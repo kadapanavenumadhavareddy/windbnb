@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import { createStore } from "vuex";
+import "./styles/style.css";
 let app = createApp(App);
 let store = createStore({
   state() {

@@ -1,17 +1,403 @@
 /* styles for all screens*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+/* nav header-1 (logo and filter)*/
+.nav-filter {
+  background: #ffffff;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  display: flex;
+  width: max-content;
+}
+.location {
+  font-style: normal;
+  font-weight: 400;
+  /* font-size: 14px;
+  line-height: 18px; */
+}
+.guest {
+  font-style: normal;
+  font-weight: 400;
+  /* font-size: 14px;
+  line-height: 18px; */
+  color: #bdbdbd;
+}
+.location,
+.guest,
+.search {
+  padding: 19px 16px;
+}
+.location,
+.guest {
+  border-right: 1px solid #f2f2f2;
+  font-size: 14px;
+  line-height: 18px;
+}
+.logo {
+  margin-top: 19px;
+}
+.nav {
+  /* margin: 32px 94px 0px 94px; */
+  display: flex;
+  justify-content: space-between;
+}
+/* nav header-2 (country  and number of stays)*/
+
+.stay-title {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 29px;
+  color: #333333;
+}
+.stay {
+  display: flex;
+  justify-content: space-between;
+}
+.stay-number {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4f4f4f;
+}
+
+/* hotel cards container */
+
+.display-properties {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Footer */
+
+footer {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #828282;
+}
+
+/* Hotel card */
+
+img {
+  height: 269px;
+  /* width: 395px; */
+  border-radius: 24px;
+}
+p {
+  font-size: 14px;
+  line-height: 17px;
+  color: #828282;
+}
+.star {
+  font-size: 16px;
+  color: #eb5757;
+  margin-right: 7px;
+}
+.card {
+  width: min-content;
+}
+section {
+  display: flex;
+  justify-content: space-between;
+}
+.body-host {
+  font-weight: 700;
+  margin-right: 11px;
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #4f4f4f;
+  border: 1px solid #4f4f4f;
+  box-sizing: border-box;
+  border-radius: 12px;
+  padding: 7px 10px;
+}
+.body-content {
+  margin-top: 21px;
+  font-size: 12px;
+}
+.body-rating {
+  margin-top: 21px;
+}
+.title {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+}
+.body {
+  display: flex;
+}
+.card-title {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 20px;
+  color: #333333;
+  font-weight: 600;
+}
+/* Filter Drawer */
+
+.place {
+  cursor: pointer;
+}
+.large {
+  display: block;
+}
+.small {
+  display: none !important;
+}
+.filter-drawer {
+  background: rgba(79, 79, 79, 0.4);
+  width: 100%;
+  height: 170vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.filter-body {
+  /* padding: 90px 10%; */
+  margin: auto;
+  background-color: #ffffff;
+}
+.filter-body-cont {
+  display: flex;
+  box-shadow: 0px 1px 6px 0px black;
+  border-radius: 16px;
+}
+.filter-content {
+  width: 30%;
+}
+.material-icons {
+  width: 14px;
+  height: 19px;
+  margin-right: 10px;
+  color: #333333;
+}
+.place {
+  margin-top: 36px;
+}
+.active {
+  border-radius: 16px;
+  border: 1px solid #333333;
+}
+.filter-content {
+  padding: 12px 26px;
+  cursor: pointer;
+}
+.btn {
+  height: 23px;
+  width: 23px;
+  padding: 7px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #333333;
+  font-size: 9px;
+}
+.adult {
+  margin-top: 48px;
+}
+.children {
+  margin-top: 52px;
+}
+.searchfilter {
+  height: 48px;
+  width: 126px;
+  background-color: rgba(235, 87, 87, 0.9);
+  border: none;
+  border-radius: 16px;
+  margin: 6px 0px;
+}
+.sub {
+  color: #bdbdbd;
+}
+.active .sub {
+  color: black;
+}
 
 /* styles for screeen between 375-424 px*/
 @media screen and (min-width: 375px) and (max-width: 424px) {
+  /* header 1 */
+  .nav-filter {
+    width: max-content;
+    margin: auto;
+    margin-top: 49px;
+  }
+  /* card  */
+  img {
+    height: 238px;
+    width: 350px;
+    border-radius: 24px;
+  }
+
+  .card {
+    padding: 0px 12px 32px 12px;
+  }
+
+  .body-host {
+    font-size: 10px;
+    line-height: 14px;
+  }
+  .display-properties {
+    padding-top: 24px;
+  }
+  .stay-title {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .nav {
+    flex-direction: column;
+  }
+  .nav {
+    margin: 32px 14px 0px 14px;
+  }
+
+  .stay {
+    padding: 37px 14px 0px 14px;
+  }
 }
 /* styles for screeen between 425-767 px*/
 @media screen and (min-width: 425px) and (max-width: 767px) {
+  .nav {
+    margin: 32px 14px 0px 14px;
+  }
+
+  .stay {
+    padding: 37px 14px 0px 14px;
+  }
+
+  .display-properties {
+    padding: 32px 14px 32px 14px;
+  }
+
+  .card {
+    padding: 0px 17px 18px 0px;
+  }
+
+  img {
+    height: 269px;
+    width: 365px;
+  }
+  .filter-body {
+    padding: 10px 10%;
+  }
 }
 /* styles for screeen between 768-1023 px*/
 @media screen and (min-width: 768px) and (max-width: 1023px) {
+  .nav {
+    margin: 32px 34px 0px 34px;
+  }
+
+  .stay {
+    padding: 47px 34px 0px 34px;
+  }
+
+  .display-properties {
+    padding: 32px 32px 32px 34px;
+  }
+
+  .card {
+    padding: 0px 10px 10px 0px;
+  }
+
+  img {
+    height: 269px;
+    width: 335px;
+  }
+
+  .filter-body {
+    padding: 50px 10%;
+  }
 }
 /* styles for screeen between 1024-1439 px*/
 @media screen and (min-width: 1024px) and (max-width: 1439px) {
+  .nav {
+    margin: 32px 74px 0px 74px;
+  }
+
+  .stay {
+    padding: 57px 74px 0px 74px;
+  }
+
+  .display-properties {
+    padding: 32px 52px 32px 74px;
+  }
+
+  .card {
+    padding: 0px 27px 28px 0px;
+  }
+
+  img {
+    height: 269px;
+    width: 385px;
+  }
+
+  .filter-body {
+    padding: 70px 10%;
+  }
 }
 /* styles for screeen more than 1440 px */
 @media screen and (min-width: 1440px) {
+  .nav {
+    margin: 32px 94px 0px 94px;
+  }
+
+  .stay {
+    padding: 67px 94px 0px 94px;
+  }
+
+  .display-properties {
+    padding: 32px 62px 32px 94px;
+  }
+
+  .card {
+    padding: 0px 32px 33px 0px;
+  }
+
+  img {
+    height: 269px;
+    width: 395px;
+  }
+
+  .filter-body {
+    padding: 90px 10%;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .small {
+    display: flex !important;
+    margin-top: 182px;
+  }
+  .large {
+    display: none !important;
+  }
+  .filter-body {
+    width: 100%;
+  }
+  .filter-body-cont {
+    flex-direction: column;
+    width: 350px;
+    margin-left: 12px;
+  }
+  .filter-content {
+    width: 100%;
+  }
+  .material-icons {
+    margin-left: 49px;
+  }
+  .active {
+    border: none;
+  }
+  /* filter end*/
 }
