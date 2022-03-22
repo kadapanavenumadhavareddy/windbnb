@@ -38,6 +38,10 @@
 ## Overview
 
 ![screenshot](./src/assets/output1.png)
+![screenshot](./src/assets/output2.png)
+![screenshot](./src/assets/output3.png)
+![screenshot](./src/assets/output4.png)
+![screenshot](./src/assets/output5.png)
 
 ### Built With
 
@@ -96,4 +100,4 @@ npm run lint
 
 ## Contact
 
-- GitHub [@madhava-reddy](https://{github.com/kadapanavenumadhavareddy})
+- GitHub [@madhava-reddy](https://github.com/kadapanavenumadhavareddy)
