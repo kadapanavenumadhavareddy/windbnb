@@ -1,7 +1,29 @@
 <template>
   <div class="filter-drawer">
     <div class="filter-body">
-      <div class="filter-body-cont">
+      <div class="sm">
+        <div>Edit your search</div>
+        <Button
+          buttonstyle="removedefault"
+          @clicked="
+            () => {
+              $emit('filterdraweroff');
+            }
+          "
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="20"
+            viewBox="0 0 48 48"
+            width="20"
+          >
+            <path
+              d="M38 12.83l-2.83-2.83-11.17 11.17-11.17-11.17-2.83 2.83 11.17 11.17-11.17 11.17 2.83 2.83 11.17-11.17 11.17 11.17 2.83-2.83-11.17-11.17z"
+            />
+            <path d="M0 0h48v48h-48z" fill="none" /></svg
+        ></Button>
+      </div>
+      <div class="filter-body-cont flex">
         <div
           class="filter-content"
           :class="[active == 'location' ? 'active' : '']"
@@ -29,22 +51,13 @@
           "
           class="large"
         >
-          <button class="searchfilter" style="color: #ffffff" @click="search">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              x="0px"
-              y="0px"
-              width="10"
-              height="10"
-              viewBox="0 0 30 30"
-              style="fill: #ffffff; margin-right: 10px"
-            >
-              <path
-                d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
-              ></path>
-            </svg>
-            Search
-          </button>
+          <Button
+            fillcolor="#ffffff"
+            buttonstyle="search-button"
+            :icon="true"
+            @clicked="search()"
+            >Search</Button
+          >
         </div>
       </div>
       <div v-if="active == 'location'">
@@ -62,42 +75,18 @@
             <p style="font-weight: 700; color: black">Adults</p>
             <p>Ages 13 or above</p>
             <div style="display: flex; margin-top: 12px">
-              <button
-                class="btn"
-                style="margin-right: 10px"
-                @click="decrement('adult')"
-              >
-                -
-              </button>
-              <p>{{ adults }}</p>
-              <button
-                class="btn"
-                style="margin-left: 10px"
-                @click="increment('adult')"
-              >
-                +
-              </button>
+              <Button @clicked="decrement('adult')">-</Button>
+              <p style="margin: 0px 10px 0px 10px">{{ adults }}</p>
+              <Button @clicked="increment('adult')">+</Button>
             </div>
           </div>
           <div class="children">
             <p style="font-weight: 700; color: black">Children</p>
             <p>Age 2-12</p>
             <div style="display: flex; margin-top: 12px">
-              <button
-                class="btn"
-                style="margin-right: 10px"
-                @click="decrement('child')"
-              >
-                -
-              </button>
-              <p>{{ childrens }}</p>
-              <button
-                class="btn"
-                style="margin-left: 10px"
-                @click="increment('child')"
-              >
-                +
-              </button>
+              <Button @clicked="decrement('child')">-</Button>
+              <p style="margin: 0px 10px 0px 10px">{{ childrens }}</p>
+              <Button @clicked="increment('child')">+</Button>
             </div>
           </div>
         </div>
@@ -111,30 +100,25 @@
         "
         class="small"
       >
-        <button class="searchfilter" style="color: #ffffff" @click="search">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            x="0px"
-            y="0px"
-            width="10"
-            height="10"
-            viewBox="0 0 30 30"
-            style="fill: #ffffff; margin-right: 10px"
-          >
-            <path
-              d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
-            ></path>
-          </svg>
-          Search
-        </button>
+        <Button
+          fillcolor="#ffffff"
+          buttonstyle="search-button"
+          :icon="true"
+          @clicked="search()"
+          >Search</Button
+        >
       </div>
     </div>
   </div>
 </template>
 <script scoped>
+import Button from "./ButtonComponent.vue";
 export default {
   props: ["tab"],
   emits: ["filterdraweroff"],
+  components: {
+    Button,
+  },
   data() {
     return {
       active: "location",
@@ -175,8 +159,12 @@ export default {
       this.$emit("filterdraweroff");
     },
   },
-  mounted() {
+  created() {
     this.active = this.tab;
+    this.selectedlocation =
+      this.$store.state.selectedplace == null
+        ? this.$store.state.places[0]
+        : this.$store.state.selectedplace;
   },
 };
 </script>

@@ -7,21 +7,10 @@
 .nav-filter {
   background: #ffffff;
   box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 16px;
-  display: flex;
   width: max-content;
 }
-.location {
-  font-style: normal;
-  font-weight: 400;
-  /* font-size: 14px;
-  line-height: 18px; */
-}
-.guest {
-  font-style: normal;
-  font-weight: 400;
-  /* font-size: 14px;
-  line-height: 18px; */
+.guest,
+.sub {
   color: #bdbdbd;
 }
 .location,
@@ -32,44 +21,31 @@
 .location,
 .guest {
   border-right: 1px solid #f2f2f2;
-  font-size: 14px;
-  line-height: 18px;
+  font: normal 400 14px/18px Montserrat;
 }
 .logo {
   margin-top: 19px;
 }
 .nav {
-  /* margin: 32px 94px 0px 94px; */
-  display: flex;
   justify-content: space-between;
 }
 /* nav header-2 (country  and number of stays)*/
 
 .stay-title {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 29px;
+  font: normal 700 24px/29px "Montserrat";
   color: #333333;
 }
 .stay {
-  display: flex;
   justify-content: space-between;
 }
 .stay-number {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  font: normal 500 14px/17px "Montserrat";
   color: #4f4f4f;
 }
 
 /* hotel cards container */
 
 .display-properties {
-  display: flex;
   flex-wrap: wrap;
   margin: auto;
   align-items: center;
@@ -79,10 +55,7 @@
 /* Footer */
 
 footer {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 17px;
+  font: normal 500 14px/17px "Montserrat";
   text-align: center;
   color: #828282;
 }
@@ -91,7 +64,6 @@ footer {
 
 img {
   height: 269px;
-  /* width: 395px; */
   border-radius: 24px;
 }
 p {
@@ -108,15 +80,12 @@ p {
   width: min-content;
 }
 section {
-  display: flex;
   justify-content: space-between;
 }
 .body-host {
-  font-weight: 700;
   margin-right: 11px;
   margin-top: 15px;
-  font-size: 12px;
-  line-height: 15px;
+  font: normal 700 12px/15px "Montserrat";
   text-transform: uppercase;
   color: #4f4f4f;
   border: 1px solid #4f4f4f;
@@ -125,26 +94,21 @@ section {
   padding: 7px 10px;
 }
 .body-content {
-  margin-top: 21px;
   font-size: 12px;
 }
-.body-rating {
+.body-rating,
+.body-content {
   margin-top: 21px;
 }
-.title {
+.title,
+.card-title {
   font-size: 16px;
   line-height: 20px;
   font-weight: 600;
-}
-.body {
-  display: flex;
 }
 .card-title {
   margin-top: 12px;
-  font-size: 16px;
-  line-height: 20px;
   color: #333333;
-  font-weight: 600;
 }
 /* Filter Drawer */
 
@@ -154,7 +118,8 @@ section {
 .large {
   display: block;
 }
-.small {
+.small,
+.sm {
   display: none !important;
 }
 .filter-drawer {
@@ -166,14 +131,11 @@ section {
   left: 0px;
 }
 .filter-body {
-  /* padding: 90px 10%; */
   margin: auto;
   background-color: #ffffff;
 }
 .filter-body-cont {
-  display: flex;
   box-shadow: 0px 1px 6px 0px black;
-  border-radius: 16px;
 }
 .filter-content {
   width: 30%;
@@ -187,22 +149,27 @@ section {
 .place {
   margin-top: 36px;
 }
-.active {
+.active,
+.filter-body-cont,
+.search-button,
+.nav-filter {
   border-radius: 16px;
-  border: 1px solid #333333;
 }
 .filter-content {
   padding: 12px 26px;
   cursor: pointer;
 }
-.btn {
+.default {
   height: 23px;
   width: 23px;
   padding: 7px;
   border-radius: 4px;
   box-sizing: border-box;
-  border: 1px solid #333333;
   font-size: 9px;
+}
+.active,
+.default {
+  border: 1px solid #333333;
 }
 .adult {
   margin-top: 48px;
@@ -210,19 +177,30 @@ section {
 .children {
   margin-top: 52px;
 }
-.searchfilter {
+.search-button {
   height: 48px;
   width: 126px;
   background-color: rgba(235, 87, 87, 0.9);
   border: none;
-  border-radius: 16px;
   margin: 6px 0px;
+  color: white;
 }
-.sub {
-  color: #bdbdbd;
+.icon {
+  margin-right: 10px;
 }
+
+.removedefault {
+  border: none;
+  background-color: #ffffff;
+}
+
 .active .sub {
   color: black;
+}
+/* GLobal Styles */
+
+.flex {
+  display: flex;
 }
 
 /* styles for screeen between 375-424 px*/
@@ -287,9 +265,6 @@ section {
   img {
     height: 269px;
     width: 365px;
-  }
-  .filter-body {
-    padding: 10px 10%;
   }
 }
 /* styles for screeen between 768-1023 px*/
@@ -379,6 +354,12 @@ section {
     display: flex !important;
     margin-top: 182px;
   }
+  .sm {
+    display: flex !important;
+    justify-content: space-between;
+    padding: 22px 18px;
+    cursor: pointer;
+  }
   .large {
     display: none !important;
   }
@@ -399,5 +380,8 @@ section {
   .active {
     border: none;
   }
-  /* filter end*/
+  /* .filter-drawer {
+    position: absolute !important;
+  } */
+  /* filter end 413*/
 }

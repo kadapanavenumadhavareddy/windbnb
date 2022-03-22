@@ -1,8 +1,8 @@
 <template>
   <div class="card">
     <img :src="data.photo" alt="image" />
-    <section>
-      <div class="body">
+    <section class="flex">
+      <div class="body flex">
         <p class="body-host" v-if="data.superHost">Super Host</p>
         <p class="body-content">
           {{ data.type }}.<span v-if="beds(data.beds)"

@@ -1,5 +1,5 @@
 <template>
-  <div class="nav">
+  <div class="nav flex">
     <div class="logo">
       <svg
         width="96"
@@ -18,34 +18,27 @@
         />
       </svg>
     </div>
-    <div class="nav-filter">
+    <div class="nav-filter flex">
       <div class="location" @click="Filter('location')">
         {{ sp.city }}, {{ sp.country }}
       </div>
       <div class="guest" @click="Filter('guest')">Add guests</div>
       <div class="search" @click="Filter('')">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          x="0px"
-          y="0px"
-          width="17"
-          height="17"
-          viewBox="0 0 30 30"
-          style="fill: background: #EB5757;
-"
-        >
-          <path
-            d="M 13 3 C 7.4889971 3 3 7.4889971 3 13 C 3 18.511003 7.4889971 23 13 23 C 15.396508 23 17.597385 22.148986 19.322266 20.736328 L 25.292969 26.707031 A 1.0001 1.0001 0 1 0 26.707031 25.292969 L 20.736328 19.322266 C 22.148986 17.597385 23 15.396508 23 13 C 23 7.4889971 18.511003 3 13 3 z M 13 5 C 17.430123 5 21 8.5698774 21 13 C 21 17.430123 17.430123 21 13 21 C 8.5698774 21 5 17.430123 5 13 C 5 8.5698774 8.5698774 5 13 5 z"
-          ></path>
-        </svg>
+        <Button
+          fillcolor="#EB5757"
+          buttonstyle="removedefault"
+          :iconheight="17"
+          :iconwidth="17"
+          :icon="true"
+        ></Button>
       </div>
     </div>
   </div>
-  <div class="stay">
+  <div class="stay flex">
     <div class="stay-title">Stays in Finland</div>
     <div class="stay-number">12+ stays</div>
   </div>
-  <div class="display-properties">
+  <div class="display-properties flex">
     <PropertyCard v-for="room in stay" :key="room" :data="room" class="card" />
   </div>
   <FilterDrawer
@@ -59,11 +52,13 @@
 import PropertyCard from "../src/components/PropertyCard.vue";
 import FilterDrawer from "../src/components/FilterDrawer.vue";
 import { mapState } from "vuex";
+import Button from "./components/ButtonComponent.vue";
 export default {
   name: "App",
   components: {
     PropertyCard,
     FilterDrawer,
+    Button,
   },
   data() {
     return {
